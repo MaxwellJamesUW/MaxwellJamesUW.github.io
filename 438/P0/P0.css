@@ -17,6 +17,8 @@
     background-color: white;
     font-family: Garamond, Georgia, serif;
     color: #234;
+    max-width: 800px;
+    margin: auto;
   }
   
   .bioText {
