@@ -5,15 +5,15 @@
   aspect-ratio: 1;
 
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   filter: brightness(80%);
-  transition: filter 1s, border 1s, border-radius 1s;
+  transition: filter .7s, border 1s, border-radius 1s;
 }
 
 .picture:hover {
   filter: brightness(100%);
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .picture-container {
