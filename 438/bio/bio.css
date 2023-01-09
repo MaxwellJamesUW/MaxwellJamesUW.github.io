@@ -14,7 +14,22 @@
 }
 
 body {
-  background-color: black;
+  background-color: white;
+  font-family: Garamond, Georgia, serif;
+  color: #234;
+}
+
+.bioText {
+  margin-left: 20px;
+}
+
+.backButton {
+  padding: 10px;
+  color: #267;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  font-size: 20px;
+}
+
+.codeSnip {
+  max-width: 600px;
 }

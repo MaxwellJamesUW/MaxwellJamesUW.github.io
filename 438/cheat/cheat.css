@@ -1,0 +1,36 @@
+.picture {
+    width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+  
+  .bio-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+    gap: 12px;
+  }
+  
+  body {
+    background-color: white;
+    font-family: Garamond, Georgia, serif;
+    color: #234;
+  }
+  
+  .bioText {
+    margin-left: 20px;
+  }
+  
+  .backButton {
+    padding: 10px;
+    color: #267;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  
+  .codeSnip {
+    max-width: 600px;
+    display: block;
+  }

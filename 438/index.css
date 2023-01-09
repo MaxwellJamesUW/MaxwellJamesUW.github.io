@@ -1,14 +1,19 @@
 .picture {
   width: 200px;
-  border: 1px solid black;
-  border-radius: 10px;
   cursor: pointer;
   object-fit: cover;
   aspect-ratio: 1;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  filter: brightness(80%);
+  transition: filter 1s, border 1s, border-radius 1s;
 }
 
 .picture:hover {
-  filter: brightness(80%);
+  filter: brightness(100%);
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .picture-container {
@@ -26,13 +31,23 @@
 }
 
 body {
-  background-color: #2f343f;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  background-color: white;
+  font-family: Garamond, Georgia, serif;
+  color: #234;
+  font-weight: bold;
 }
 
 .page-container {
   width: 80%;
   margin-top: 5rem;
   margin: auto;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.tagline {
+  text-align: center;
 }
