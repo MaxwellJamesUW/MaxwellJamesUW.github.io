@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Max's 439</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <a href="../">- Back -</a>
+            <h1>Max's Assignment 1</h1>
+        </div>
+        <div>
+            <h2>Schematic</h2>
+            <figure>
+                <img src="schematic.jpg" width=600>
+                <figcaption>Three LED and resistor pairs are connected to ground and a pin on the Arduino. The LEDs are red, yellow, and blue.</figcaption>
+            </figure>
+            <figure>
+                <img src="calc.jpg" width=600>
+                <figcaption>To have 20mA of current, the blue LED would need 85 ohms of resistance. The red and yellow LEDs would need 160 ohms. I decided to use 330 ohms for all of them because it simplifies things, and I'm fine with a bit less current and LED brightness.</figcaption>
+            </figure>
+
+            <h2>Circuit in Action</h2>
+            <figure>
+                <img src="pic.jpg" width=600>
+                <figcaption>Here's what it looks like.</figcaption>
+            </figure>
+            <figure>
+                <img src="gif.gif" width=600>
+                <figcaption>Hey, it blinks.</figcaption>
+            </figure>
+            <h2>Firmware</h2>
+            <a href="BlinkProj1.ino" download>- Download INO File -</a>
+            <pre>
+                void setup() {
+                    // initialize digital pins 2, 4, and 6 as outputs.
+                    pinMode(2, OUTPUT);
+                    pinMode(4, OUTPUT);
+                    pinMode(6, OUTPUT);
+                  }
+            </pre>
+            <pre>
+                // the loop function runs over and over again forever
+                void loop() {
+                    //set pin 2 to power, turning on its LED (red)
+                    digitalWrite(2, HIGH);
+                    //wait .2s
+                    delay(200);
+                    //set pin 4 to power, turning on its LED (blue)
+                    digitalWrite(4, HIGH);
+                    //wait .2s
+                    delay(200);
+                    //set pin 2 to ground, turning off its LED (red)
+                    digitalWrite(2, LOW);
+                    //wait .3s
+                    delay(300);
+                    //set pin 6 to power, turning on its LED (yellow)
+                    digitalWrite(6, HIGH);
+                    //wait .1s
+                    delay(100);
+                    //set pin 4 to ground, turning off its LED (blue)
+                    digitalWrite(4, LOW);
+                    //wait .5s
+                    delay(500);
+                    //set pin 2 to power, turning on its LED (red)
+                    digitalWrite(2, HIGH);
+                    //set pin 4 to power, turning on its LED (blue)
+                    digitalWrite(4, HIGH);
+                    //wait .4s
+                    delay(400);
+                    //set pin 2 to ground, turning off its LED (red)
+                    digitalWrite(2, LOW);
+                    //wait .4s
+                    delay(400);
+                    //set pin 6 to ground, turning off its LED (yellow)
+                    digitalWrite(6, LOW);
+                    //wait .3s
+                    delay(300);
+                }
+            </pre>
+
+        </div>
+        
+    </body>
+</html>
