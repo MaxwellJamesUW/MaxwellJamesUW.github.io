@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link rel="stylesheet" href="./P0.css" />
+    <link rel="stylesheet" href="mp1.css" />
   </head>
   <body>
     <a href="../index.html" class="backButton">Back To Home</a>
@@ -11,7 +11,7 @@
             <p>
               This browser extension edits the css styles on a page to change the background color, text color, and font. Changes are only applied while the 'enable style' checkbox is checked.
             </p>
-            <img src="gif.gif"/>
+            <img src="mp1.gif"/>
             <p>This code can be run by downloading the github repository and loading it into Google Chrome as an unpacked extension.</p>
             <a href="https://github.com/MaxwellJamesUW/DarkMode-Everywhere" target="_blank">Open Github Repo</a>
 
@@ -20,12 +20,16 @@
               I started by cloning the background-colorizer example. After walking through the code that was getting user input and changing a page's background color, I added an option to change a page's text color.
               Once that was working, I removed the button to send the color, and instead added event listeners to the color inputs to update the page whenever they changed.
             </p>
+            <img src="inProgressSnip1.JPG"/>
+            <img src="inProcessCode1.JPG"/>
             <p>
               Next, I added a checkbox to 'enable style' with basic logic to prevent style changes while it is unchecked. Then, I added a select option menu to change the font on a given page.
             </p>
             <p>
               At this stage, the document's body tag was being updated with the styles. To have the changes affect more elements, I wanted to apply the new styles to every div and p tag in the document. I started by moving the style-changing code to a helper function that I would call for every element. Then, I used getElementsByTagName to get a collection of all the p and div tags, and I called the changeStyles helper function for each one.
             </p>
+            <img src="codeSnip2.JPG"/>
+            <img src="CodeProcessPic2.JPG"/>
             <p>
               After some debugging, the extension was working. To improve the visuals, I added some basic css to format the extension popup. I also changed the icon to a moon.
             </p>
@@ -36,13 +40,13 @@
             <p>After loads of time spent reviewing my code, testing the extension on different pages, and scratching my head, I realized the error only showed up when I opened the extension on a fresh new tab or the Chrome extensions page. Inspecting the page with the browser's dev tools told me there was an issue with passing the tab id on these specific pages.</p>
             <p>I thought I might have broken something from the background-colorizer example, so I cloned a fresh version to test. It turned out that the error was there too, it was just a minor problem that didn't really affect the functionality of the extension.</p>
             <p>I had spent all this time investigating this issue in an attempt to prevent the error message, and sunk cost fallacy compelled me to continue. I researched ways of preventing the error from showing up on the extensions page in Chrome. I ended up wrapping the request in a try/catch block and adding a popup message to inform the user when the extension won't work on a certain tab.</p>
-            
+            <img src="popuppic1.jpg">
             <h3>Ideas and Future Work</h3>
             <ul>
               <li>Save styles between pages, so the extension remembers your last settings</li>
               <li>Make the styles affect more elements on a given page</li>
               <li>Save a page's original style, return pages to default when 'enable' is unchecked</li>
-            </ul>>
+            </ul>
 
             <h3>Kudos</h3>
             <ul>
