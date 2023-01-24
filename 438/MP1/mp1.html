@@ -7,25 +7,48 @@
     <div>
         <h2>MP1: Browser Extension</h2>
         <p>
-            <h3>Overview & Usage</h3> 
-            <img class="screenshot" src="siteProgressPic.jpg" />
+            <h3>Overview & Usage</h3>
+            <p>
+              This browser extension edits the css styles on a page to change the background color, text color, and font. Changes are only applied while the 'enable style' checkbox is checked.
+            </p>
+            <img src="gif.gif"/>
+            <p>This code can be run by downloading the github repository and loading it into Google Chrome as an unpacked extension.</p>
+            <a href="https://github.com/MaxwellJamesUW/DarkMode-Everywhere" target="_blank">Open Github Repo</a>
 
             <h3>Development Process</h3>
+            <p>
+              I started by cloning the background-colorizer example. After walking through the code that was getting user input and changing a page's background color, I added an option to change a page's text color.
+              Once that was working, I removed the button to send the color, and instead added event listeners to the color inputs to update the page whenever they changed.
+            </p>
+            <p>
+              Next, I added a checkbox to 'enable style' with basic logic to prevent style changes while it is unchecked. Then, I added a select option menu to change the font on a given page.
+            </p>
+            <p>
+              At this stage, the document's body tag was being updated with the styles. To have the changes affect more elements, I wanted to apply the new styles to every div and p tag in the document. I started by moving the style-changing code to a helper function that I would call for every element. Then, I used getElementsByTagName to get a collection of all the p and div tags, and I called the changeStyles helper function for each one.
+            </p>
+            <p>
+              After some debugging, the extension was working. To improve the visuals, I added some basic css to format the extension popup. I also changed the icon to a moon.
+            </p>
 
             <h3>Issue Deep-Dive</h3>
-
+            <p>My most confusing issue on this project was a mysterious runtime error that showed up in the browser's extensions page. The error message wasn't very descriptive, and the error itself was inconsistent. The style-changing functions of the extension seemed to be working, but I wanted to make sure it wouldn't randomly break during use. </p>
+            <img src="error1.jpg"/>
+            <p>After loads of time spent reviewing my code, testing the extension on different pages, and scratching my head, I realized the error only showed up when I opened the extension on a fresh new tab or the Chrome extensions page. Inspecting the page with the browser's dev tools told me there was an issue with passing the tab id on these specific pages.</p>
+            <p>I thought I might have broken something from the background-colorizer example, so I cloned a fresh version to test. It turned out that the error was there too, it was just a minor problem that didn't really affect the functionality of the extension.</p>
+            <p>I had spent all this time investigating this issue in an attempt to prevent the error message, and sunk cost fallacy compelled me to continue. I researched ways of preventing the error from showing up on the extensions page in Chrome. I ended up wrapping the request in a try/catch block and adding a popup message to inform the user when the extension won't work on a certain tab.</p>
+            
             <h3>Ideas and Future Work</h3>
-            <p>
-                If I kept working on this, I would add more extensive style changes to change more elements on a page.
-                At this time, certain websites are less affected by the extension than others because they have complicated style rules.
-                I'd also like to save the default style of a page, so when a user unchecks the 'enable styles' checkbox, the page reverts to its default look.
-            </p>
+            <ul>
+              <li>Save styles between pages, so the extension remembers your last settings</li>
+              <li>Make the styles affect more elements on a given page</li>
+              <li>Save a page's original style, return pages to default when 'enable' is unchecked</li>
+            </ul>>
 
             <h3>Kudos</h3>
             <ul>
-                <li>Icon from <a href="https://iconmonstr.com/?s=night">iconmonstr.com</a></li>
                 <li>Iterating through an HTML Collection: <a href="https://www.geeksforgeeks.org/htmlcollection-for-loop/">geeksforgeeks.org</a></li>
-            </ul>
+                <li>Try/Catch in JS: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">mozilla.org</a></li>
+              </ul>
 
 
 
