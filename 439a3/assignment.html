@@ -20,7 +20,7 @@
             <figure>
                 <img src="schematic.jpg" width=600>
                 <figcaption>The Arduino reads in the voltage from a voltage divider with a photoresistor. The read values determine the brightness of a green LED on pin 5 and the position of a servo motor with pin 9. A red LED is connected to pin 6 to indicate a calibration period on startup.</figcaption>
-                <figcaption>The LEDs each need a minimum of 160 ohms to limit current to 2mA. I used 220 ohms for each because it was easier and a bit more resistance is fine.</figcaption>
+                <figcaption>The LEDs each need a minimum of 160 ohms to limit current to 20mA. I used 220 ohms for each because it was easier and a bit more resistance is fine.</figcaption>
             </figure>
             <figure>
                 <img src="calc.jpg" width=600>
@@ -34,7 +34,7 @@
             </figure>
             <figure>
                 <img src="a3gif.gif" width=600>
-                <figcaption>I cover the photoresistor to decrease its lux reading and increase its resistance. The green LED shines brighter in the dark, and the servo motor's position changes with the light level.</figcaption>
+                <figcaption>I cover the photoresistor to change the analog input reading. The green LED shines brighter in the dark, and the servo motor's position changes with the light level.</figcaption>
             </figure>
             <figure>
                 <img src="serial1.jpg" width=600>
@@ -64,7 +64,7 @@
     //define pin for LED showing active calibration (red)
     const int calibratingLED = 6;
 
-    //value of sensor pin
+    //value of sensor pin, will correspond to voltage read into A0 from the voltage divider
     int sensorValue = 0;
     //variable to hold minimum value during calibration period
     // set to 1023 first because this is the max value we can read, so anything
