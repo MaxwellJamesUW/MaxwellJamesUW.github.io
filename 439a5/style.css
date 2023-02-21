@@ -1,0 +1,78 @@
+
+html, body {
+  padding: 0 0 0 0;
+  margin: 0;
+  font-family: 'helvetica', 'arial', 'sans';
+}
+
+h1,h2,h3,h4 {
+  font-family: 'helvetica', 'arial', 'sans';
+  }
+
+
+a {
+  color: #00A;
+  padding: 8px 22px;
+  
+}
+a:hover {
+  color: #44F;
+}
+
+.header {
+  background: #fff;
+  color: #000;
+  height: auto;
+  padding: 30px 30px 30px;
+}
+
+.header h1 {
+  font-size: 50px;
+  }
+
+.assignment {
+  font-size: 12px;
+  line-height: 24px;
+  font-family: 'helvetica', 'arial', 'sans';
+  padding: 20px 20px 20px 30px;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  float: left;
+}
+
+.assignment:hover { overflow:auto }
+
+.assignment a {
+    color: #000;
+    text-decoration: none;
+}
+
+.assignment a:hover {
+  background: #F06;
+  color: #F06;
+  text-decoration: none;
+}
+
+.footer {
+    width: 1100px;
+    float: left;
+    padding: 300px 0px 30px 30px;
+}
+
+h1 {
+  margin: 12px 30px 30px;
+}
+h2 {
+  margin: 12px 30px 30px;
+}
+
+figcaption{
+  margin: 12px 5px 26px;
+  max-width: 600px;
+}
+
+.content{
+  max-width: 800px;
+  margin: 0 auto;
+}
