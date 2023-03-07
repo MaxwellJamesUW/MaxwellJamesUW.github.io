@@ -29,7 +29,7 @@
             </p>
 
             <h3>Issue Deep-Dive</h3>
-            <p>
+            <p> 
               My biggest issue was properly connecting the Firestore database to the game. First, I had issues properly importing and setting up firebase dependencies in the code. This was because my code-bundling setup with vite wasn't configured properly, and I couldn't quite figure out how to set the internal rollup configuration within vite. I was trying to fix a logic error where files weren't being imported properly, but every change I made caused a syntax error.
               As a work-around, I ended up installing rollup in the repository to easily define which files should be included in the dist/ directory. I learned that rollout and vite don't conflict with each other if you install both, and it ended up being easiest to install both this time. Once that was figured out, I had to fix a few minor syntax errors in my code to send and receive data from the database. Now, it all works to save and display players' names, scores, and shots taken.
             </p>
@@ -43,7 +43,7 @@
             <ul>
               <li>Fix button press registering as a shot taken</li>
               <li>Restart game button</li>
-              <li>Polished visuals and sound effects</li>
+              <li>Add polished visuals and sound effects</li>
             </ul>
 
             <h4><b>Time Management</b></h4>
