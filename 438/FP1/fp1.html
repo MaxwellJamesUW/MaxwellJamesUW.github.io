@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/438/MP1/mp1.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="backButton">Back To Home</a>
+    <div>
+        <h2>MP3: Dev Toolchain</h2>
+        
+            <h3>Overview & Usage</h3>
+            <p>
+              For this project, I've made a game using p5js and p5play. The game is a basketball hoop shooter, where the user can click and drag the mouse to shoot a ball into a basket. This final prototype builds on my MP3 game by adding a scoreboard with a Firestore database.
+            </p>
+            <img src="hoopsPrototype.gif"/>
+            <p>The game can be played here:</p>
+            <a href="https://maxwelljamesuw.github.io/HoopsPrototype/" target="_blank">Hoops Prototype</a>
+
+            <h3>Development Process</h3>
+            <p>
+              I started this project by setting up a new repository and importing my code from my MP3 game. Next, I created a back-end database with Firebase to store players' high scores. I tested sending scores to the database at the end of a game.
+            </p>
+            <img src="438 progress 1.jpg"/>
+            <p>
+              I ran into some issues starting a new repository and getting the game to send and receive data to Firebase. Once those were sorted out, I formatted the scoreboard as a basic text display in the game's window. This way, the player can keep shooting endless baskets if they choose.
+            </p>
+            <img src="438 progress 2.jpg"/>
+            <p>
+              The last step for the prototype deliverable on 3/7 was to create a start screen where the user can input their name and press a button to start the game. Once this overlay was implemented, I decided on a color palette for the game and started to put it in.
+            </p>
+
+            <h3>Issue Deep-Dive</h3>
+            <p>
+              My biggest issue was properly connecting the Firestore database to the game. First, I had issues properly importing and setting up firebase dependencies in the code. This was because my code-bundling setup with vite wasn't configured properly, and I couldn't quite figure out how to set the internal rollup configuration within vite. I was trying to fix a logic error where files weren't being imported properly, but every change I made caused a syntax error.
+              As a work-around, I ended up installing rollup in the repository to easily define which files should be included in the dist/ directory. Once that was figured out, I had to fix a few minor syntax errors in my code to send and receive data from the database. Now, it all works to save and display players' names, scores, and shots taken.
+            </p>
+
+            <h3>Project Milestone Check-in</h3>
+            <h4><b>Project Scope</b></h4>
+            <p>
+              The project scope has not changed since my proposal document, and I'm on track with my defined prototype milestone. There is a new bug where the player pressing the 'start game' button registers as a mouse click and increments their 'shots' counter. I'm thinking of fixing this by adding a 3-2-1 countdown screen between the player hitting the button and the game actually starting. I should have plenty of time to add this new feature, but other solutions also exist to fix the bug.
+            </p>
+            <h4>Upcoming Work Items:</h4>
+            <ul>
+              <li>Fix button press registering as a shot taken</li>
+              <li>Restart game button</li>
+              <li>Polished visuals and sound effects</li>
+            </ul>
+
+            <h4><b>Time Management</b></h4>
+            <p>
+              My issues setting up a new repository with vite and connecting the Firestore database to the game caused the prototype to take a couple more hours than expected. I'm still on track and should have more than enough time to finish building my last features and add polish to the game.
+            </p>
+
+            <h4><b>Implementation Plan</b></h4>
+            <p>I plan to use the same repository setup for the final version as I did for this prototype. I'll first need to fix the bug that can add a shot to the player's counter, but then I can continue adding a quick restart button, better visuals, sound effects, and polish to the game.</p>
+            
+            <h3>Ideas and Future Work</h3>
+            
+            <h4><b>Future Work Ideas:</b></h4>
+            <ul>
+              <li>Add a moving basket mode</li>
+            </ul>
+
+            <h3>Kudos</h3>
+            <ul>
+                <li>Using sprites with p5.play:  <a href="https://p5play.org/learn/sprite.html">P5.Play Documentation</a></li>
+                <li>Prof Hannah's example game:  <a href="https://github.com/branchwelder/example-game">GitHub Repo</a></li>
+              </ul>
+        
+    </div>
+  </body>
+</html>
