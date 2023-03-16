@@ -3,17 +3,25 @@
   cursor: pointer;
   object-fit: cover;
   aspect-ratio: 1;
+  padding: 6px 0px;
 
-  border: 1px solid black;
   border-radius: 20px;
   filter: brightness(80%);
-  transition: filter .7s, border 1s, border-radius 1s;
+  transition: filter .7s, border-radius 1s;
+}
+
+@media only screen and (max-width: 768px) {
+  .picture {
+    width: 100%;
+  }
 }
 
 .picture:hover {
   filter: brightness(100%);
-  border: 1px solid lightgray;
   border-radius: 8px;
+  border-bottom: 6px solid #33F;
+  border-top: 6px solid #33F;
+  padding: 0px;
 }
 
 .picture-container {
@@ -23,6 +31,15 @@
   margin: auto;
   gap: 12px;
   justify-content: center;
+}
+
+a.cardLink {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color:#234;
+}
+a.cardLink:hover {
+  color:#3333FF;
 }
 
 .image-title {
@@ -46,11 +63,15 @@ body {
 
 h1 {
   font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 .header h1 {
   margin: 20px 20px 10px;
+}
 
+.header {
+  margin-bottom: 30px;
 }
 
 .tagline {
@@ -64,4 +85,49 @@ h1 {
 
 h2 {
   padding-left: 20px;
+}
+
+nav {
+  display: block;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16pt;
+  padding: 4px 10px;
+  color: #234;
+}
+
+nav a:visited {
+  color: #234;
+}
+
+nav a:hover {
+  color: #33f;
+}
+
+nav a.curr {
+  text-decoration: underline;
+  text-decoration-color: #33f;
+}
+
+img.bioPic {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+.intro-paragraph {
+  display:block;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.codeSnip {
+  margin: 0;
+  padding: 0;
+  max-width: 90vw;
 }

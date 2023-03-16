@@ -11,7 +11,7 @@
             <p>
               For this project, I've made a game using p5js and p5play. The game is a hoop shooter, where the user can click and drag the mouse to shoot a ball into a basket. The game tracks the number of shots the player takes as well as their score (baskets made).
             </p>
-            <img src="mp3.gif"/>
+            <img src="mp3.gif" alt="a gif of a 2D basketball game where the player shoots a ball into a basket"/>
             <p>The game can be played here:</p>
             <a href="https://maxwelljamesuw.github.io/devToolchainExample/" target="_blank">Hoop Shooter Game</a>
 
@@ -20,11 +20,11 @@
               Once I had the development toolchain set up with the in-class activity, I started this project by looking through the p5.play documentation and examples. I couldn't get the p5.play library to link correctly at first through an npm import and node_modules, so I used script tags with the web links to work on the game as I sorted out that issue.
               As I was learning how to use sprites collision rules, I set up the basic sprites that would be used in the game. It just had boundary boxes along the edges of the screen and a ball for the player to control.
             </p>
-            <img src="gameProgress1.jpg"/>
+            <img src="gameProgress1.jpg" alt="an early screenshot of the game, before a basket was added"/>
             <p>
               At this early stage, the ball would move towards wherever the player clicked. Next, I added more logic to the 'onmousedown' and 'onmouseup' events so the ball would be propelled when the user clicks and drags. I later changed these to use the mousePressed and mouseReleased functions to get the game to work with touch screens. This behavior feels kind of like the slingshot from Angry Birds. Once this was sorted out, I wrote a function to create a basket using two small rectangular sprites.
             </p>
-            <img src="gameProgress2.jpg"/>
+            <img src="gameProgress2.jpg" alt="a screenshot of the minimum basic game, with the ball, basket, and score tracker"/>
             <p>
               To detect whether the player has scored a basket, I set the draw() function to check whether the ball was colliding with both of the basket's rectangles for a short time. When this happens, the player's score is incremented and the ball is moved to its starting position again.
             </p>
