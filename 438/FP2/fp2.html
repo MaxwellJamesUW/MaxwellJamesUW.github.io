@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/438/MP1/mp1.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="backButton">Back To Home</a>
+    <div>
+        <h2>FP2: Hoops Game</h2>
+        
+            <h3>Overview & Usage</h3>
+            <p>
+              For this project, I've made a game using p5js and p5play. The game is a basketball hoop shooter, where the user can click and drag the mouse to shoot a ball into a basket. This final project builds on my prototype game by adding a countdown to the game starting and more polished visuals.
+            </p>
+            <img src="hoopsPrototype.gif" alt="animated gif of the basketball game"/>
+            <p>The game can be played here:</p>
+            <a href="https://maxwelljamesuw.github.io/HoopsGame/" target="_blank">Hoops Final Game</a>
+
+            <h3>Development Process</h3>
+            <p>
+              I started this project by adding a 3-2-1 countdown timer just before the game starts. In addition to being fun, this also fixed an issue with the 'start' button registering as a shot taken.
+            </p>
+            <img src="hoopsProgress.jpg" alt="in-progress screenshot of the basket game with errors"/>
+            <p>
+              Next, I added more facial expressions for the ball. Now, after the player shoots the ball, it will switch to one of three random idle faces. The ball also has a special face for when it is moving fast. I also added a title image that says "Hoops."
+            </p>
+
+            <h3>Issue Deep-Dive</h3>
+            <p> 
+              As I was working on the countdown screen, I had trouble getting the start screen to disappear and the countdown timer to display properly. It turned out to be a logic error with how I was switching game states and stopping the loop() function.
+              I originally was doing the countdown with a while loop in a helper function, but this didn't let the loop() function run. Because of this, my start screen didn't go away for the countdown duration. I figured out what was happening by putting many console.log() statements in my code.
+              I was able to fix the issue by rearranging my code and running my countdown with a conditional 'if' statement in my draw() function rather than a 'while' loop in a helper function.
+            </p>
+
+            <h3>Ideas and Future Work</h3>
+            <ul>
+              <li>Add a moving basket mode</li>
+              <li>Build a 2D platformer with the same ball character and movement</li>
+            </ul>
+
+            <h3>Kudos</h3>
+            <ul>
+                <li>Using sprites with p5.play:  <a href="https://p5play.org/learn/sprite.html">P5.Play Documentation</a></li>
+                <li>Prof Hannah's example game:  <a href="https://github.com/branchwelder/example-game">GitHub Repo</a></li>
+              </ul>
+        
+    </div>
+  </body>
+</html>

@@ -12,7 +12,13 @@
 
 @media only screen and (max-width: 768px) {
   .picture {
-    width: 100%;
+    width: 90%;
+  }
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+  .picture{
+    width: 90%;
   }
 }
 
@@ -50,9 +56,8 @@ a.cardLink:hover {
 
 body {
   background-color: white;
-  font-family: Garamond, Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #234;
-  font-weight: bold;
 }
 
 .page-container {
@@ -64,6 +69,11 @@ body {
 h1 {
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
+  font-size: 24pt;
+}
+
+p {
+  font-size: 14pt;
 }
 
 .header h1 {
