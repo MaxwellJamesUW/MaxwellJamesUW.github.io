@@ -16,6 +16,12 @@
         <p class="intro-paragraph">
           <h3>HTML</h3> 
           <a href="https://www.w3schools.com/">w3schools Tutorials & Help</a>
+          <h4>Linking Files</h4>
+          <pre>
+<link rel="stylesheet" href="index.css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="sketch.js"></script>
+          </pre>
           <hr/>
           <h3>CSS</h3>
           <h4>Transitions</h4>
@@ -28,16 +34,24 @@
           <h4>HTML Templates</h4>
           <pre>
 // Importing the html template tag and render function
+// Do an npm install lit-html to use this
 import { html, render } from "lit-html";
 // This is a lit-html template function. It returns
 // a lit-html template.
-const helloTemplate = (name) => html`<div>Hello ${name}!</div>`;
-// This renders <div>Hello Steve!</div> to the document body
+const helloTemplate = (name) => html`&lt;div>Hello ${name}!&lt;/div>`;
+// This renders &lt;div>Hello Steve!&lt;/div> to the document body
 render(helloTemplate("Steve"), document.body);
-// This updates to <div>Hello Kevin!</div>, but only updates
+// This updates to &lt;div>Hello Kevin!&lt;/div>, but only updates
 // the ${name} part
 render(helloTemplate("Kevin"), document.body);
           </pre>
+          <h4>Fetch</h4>
+          <pre>
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response) => response.json())
+.then((data) => console.log(data));
+          </pre>
+
         </p>
       </div>
     </div>
