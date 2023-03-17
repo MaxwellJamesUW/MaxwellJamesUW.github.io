@@ -44,6 +44,7 @@ a.cardLink {
   font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
   color:#234;
+  flex-grow: 1;
 }
 a.cardLink:hover {
   color:#3333FF;
