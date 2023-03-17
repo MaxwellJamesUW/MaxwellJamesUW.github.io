@@ -27,9 +27,14 @@
   
   .backButton {
     padding: 10px;
-    color: #267;
+    margin: 10px;
+    color: #234;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    text-decoration: none;
+  }
+  .backButton:hover{
+    color:#33f;
   }
   
   .screenshot {
