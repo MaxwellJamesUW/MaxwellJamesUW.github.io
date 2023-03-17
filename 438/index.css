@@ -4,7 +4,7 @@
   object-fit: cover;
   aspect-ratio: 1;
   padding: 6px 0px;
-
+  flex-grow: 1;
   border-radius: 20px;
   filter: brightness(80%);
   transition: filter .7s, border-radius 1s;
@@ -33,6 +33,7 @@
 .picture-container {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 3;
   width: 80%;
   margin: auto;
   gap: 12px;
@@ -69,7 +70,7 @@ body {
 h1 {
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
-  font-size: 24pt;
+  font-size: 32px;
 }
 
 p {
