@@ -237,7 +237,7 @@ function keyPressed(event){
       drawTopButtonPrompt();
       drawBotButtonPrompt();
       drawVoterName(p1);
-      //
+
     }
     
   }
@@ -319,24 +319,28 @@ function keyPressed(event){
         p2 = participants.pop(); //different pop(), pops someone out of the list
 
         fill(0);
-        textSize(20);
-        text("Go find " + p2.name + ".", windowWidth/2, 3.1*windowHeight/5);
-        text("Have them " + activeInputs[0][1] + ".", windowWidth/2, 3.3*windowHeight/5)
+        textSize(40);
+        text("Go find " + p2.name + ".", 3*windowWidth/5, 2*windowHeight/5);
+        text("Have them " + activeInputs[0][1] + ".", 3*windowWidth/5, 3*windowHeight/5)
 
-        image(p2.photo, 2*windowWidth/5, windowHeight/3, windowWidth/5,windowWidth/5);
+        image(p2.photo, 0, windowHeight/3, windowWidth/5,windowWidth/5);
         
     
     } else {
     //if we don't have a next person in the list...
+      p2 = pZero;
+      
+      /*
       background("#FF0000");
       fill("#FFF");
       text("We ran out of people", windowWidth/2, windowHeight/2);
+      */
       
     // TODO:
     // link back to the first person who had the object, then
     // END OF GAME
     
-    }
+      }
       
       
       
@@ -422,7 +426,7 @@ function drawTopText(wordString){
 function drawTopButtonPrompt(){
   push();
   fill(0);
-  textSize(26);
+  textSize(32);
   text(activeInputs[0][1] + "", windowWidth/2, 1.5*windowHeight/6);
   pop();
 }
@@ -447,7 +451,7 @@ function drawBotButtonPrompt(){
   push();
   fill(255);
   rotate(180);
-  textSize(26);
+  textSize(32);
   text(activeInputs[1][1] + "", -windowWidth/2, -4.5*windowHeight/6);
   pop();
 }
