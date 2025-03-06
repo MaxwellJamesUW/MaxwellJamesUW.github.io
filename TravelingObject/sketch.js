@@ -20,7 +20,11 @@ let allInputs = [
   ["s", "spin the dial"]
 ];
 let activeInputs = [];
+
+//timer
 let timerStart;
+let discussionTime = 20000; //90s
+let skipDelay = 10000; //60s
 
 //to keep track of the results:
 results = [[0,0],[0,0]];
@@ -143,8 +147,22 @@ function draw() {
   
   if (activeScreen === "person"){
     // do next person
+    clear();
+    fill(0);
+    textSize(40);
+    text("Go find " + p2.name + ".", 3*windowWidth/5, 2*windowHeight/5);
+    text("Have them " + activeInputs[0][1] + ".", 3*windowWidth/5, 3*windowHeight/5)
+
+    image(p2.photo, 0, windowHeight/3, windowWidth/5,windowWidth/5);
   
-  
+    if (millis() - timerStart < skipDelay){
+      
+      text("Try to find them for at least " + skipDelay/1000 + " seconds.", windowWidth/2, 6*windowHeight / 7);
+      
+    } else{
+      
+      text("Can't find them? To skip, " + activeInputs[1][1] + ".", windowWidth/2, 6*windowHeight / 7);
+    }
   }
   
   
@@ -160,7 +178,8 @@ function draw() {
 
     // idea: show the timer on this page
     // when it runs out, allow users to vote
-
+    
+    
     /*
     todo: a timer that counts down, displaying its value as text as it does. when it reaches zero, it triggers something to happen
 
@@ -238,6 +257,14 @@ function keyPressed(event){
       drawBotButtonPrompt();
       drawVoterName(p1);
 
+    } else if (key === activeInputs[1][0]){
+      //SKIP button, they couldn't find the person
+      //if delay has passed, do the skip
+      if (millis() - timerStart > skipDelay){
+        getNextP();
+        timerStart = millis();
+      }
+      
     }
     
   }
@@ -291,7 +318,7 @@ function keyPressed(event){
       
       results[activeQ][0] += 1; //add a point to this option
       clear();
-      setOneRandInput(); //set a new active input
+      setTwoRandInputs(); //set a new active input
       activeScreen = 'results';
       showResults();
     }
@@ -312,38 +339,11 @@ function keyPressed(event){
       clear();
       switchQ();
       activeScreen = "person";
+      timerStart = millis();
+      setTwoRandInputs();
       p1 = p2; //move the "next person" into the "current person" spot
       //   if we still have a next person...
-    //TODO update so this only runs once when going from results to person
-      if (participants.length > 0){
-        p2 = participants.pop(); //different pop(), pops someone out of the list
-
-        fill(0);
-        textSize(40);
-        text("Go find " + p2.name + ".", 3*windowWidth/5, 2*windowHeight/5);
-        text("Have them " + activeInputs[0][1] + ".", 3*windowWidth/5, 3*windowHeight/5)
-
-        image(p2.photo, 0, windowHeight/3, windowWidth/5,windowWidth/5);
-        
-    
-    } else {
-    //if we don't have a next person in the list...
-      p2 = pZero;
-      
-      /*
-      background("#FF0000");
-      fill("#FFF");
-      text("We ran out of people", windowWidth/2, windowHeight/2);
-      */
-      
-    // TODO:
-    // link back to the first person who had the object, then
-    // END OF GAME
-    
-      }
-      
-      
-      
+      getNextP();
     }
   }
 }
@@ -353,6 +353,14 @@ function changeScreenTo(nextScreen){
   clear();
 }
 
+function getNextP(){
+  if (participants.length > 0){
+        p2 = participants.pop(); //different pop(), pops someone out of the list
+  } else {
+    //if we don't have a next person in the list...
+    p2 = pZero;
+  }
+}
 
 //switches active question
 function switchQ(){
@@ -367,6 +375,12 @@ function showResults(){
   let option1 = results[activeQ][0];
   let option2 = results[activeQ][1];
   drawPieChart(option1, option2);
+  push();
+  fill("#F00");
+  text(allQs[activeQ][0], windowWidth/2, 40);
+  fill("#00F");
+  text(allQs[activeQ][1], windowWidth/2, windowHeight-10);
+  pop();
 }
 
 function drawVoterName(person){
@@ -454,11 +468,6 @@ function drawBotButtonPrompt(){
   textSize(32);
   text(activeInputs[1][1] + "", -windowWidth/2, -4.5*windowHeight/6);
   pop();
-}
-
-// on window resized, update canvas size to match
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
 }
 
 //I didn't write this one. shuffle function to shuffle list order
