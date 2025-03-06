@@ -157,7 +157,7 @@ function draw() {
   
     if (millis() - timerStart < skipDelay){
       
-      text("Try to find them for at least " + skipDelay/1000 + " seconds.", windowWidth/2, 6*windowHeight / 7);
+      text("Try to find them for at least " + floor((skipDelay - (millis()-timerStart))/1000) + " seconds.", windowWidth/2, 6*windowHeight / 7);
       
     } else{
       
@@ -172,21 +172,31 @@ function draw() {
   if (activeScreen === "timer") {
     // Say we have a collection of two-part prompts to draw from.
     // we could just have two and alternate them.
-    
+    clear();
     drawTopText(allQs[activeQ][0]);
     drawBotText(allQs[activeQ][1]);
 
     // idea: show the timer on this page
     // when it runs out, allow users to vote
     
+    text("Discuss for " + floor((discussionTime - (millis()-timerStart))/1000) + " seconds.", windowWidth/2, windowHeight/2);
     
-    /*
-    todo: a timer that counts down, displaying its value as text as it does. when it reaches zero, it triggers something to happen
-
-    todo: alternate between two questions with the activeQ variable
-
-    todo: 
-      */
+    //if timer is up, swtich to voting!
+    if (millis()-timerStart > discussionTime){
+      //TODO
+      // move this code to when the timer runs out and we switch
+      // to vote 1 screen
+      clear()
+      activeScreen = "vote1";
+      setTwoRandInputs(); //set activeInput tracker with 2 new
+      
+      drawTopText(allQs[activeQ][0]);
+      drawBotText(allQs[activeQ][1]);
+      drawTopButtonPrompt();
+      drawBotButtonPrompt();
+      drawVoterName(p1);
+      
+    }
   }
   
   // ................................................
@@ -238,24 +248,13 @@ function keyPressed(event){
       //clear this screen
       clear();
       //switch to the timer screen next
+      timerStart = millis();
       activeScreen = "timer";
-      
       //for the timer screen, there will be no active inputs eventually
       //todo
       activeInputs = []; //empty the active inputs list
       
-      
-      //TODO
-      // move this code to when the timer runs out and we switch
-      // to vote 1 screen
-      activeScreen = "vote1";
-      setTwoRandInputs(); //set activeInput tracker with 2 new
-      
-      drawTopText(allQs[activeQ][0]);
-      drawBotText(allQs[activeQ][1]);
-      drawTopButtonPrompt();
-      drawBotButtonPrompt();
-      drawVoterName(p1);
+
 
     } else if (key === activeInputs[1][0]){
       //SKIP button, they couldn't find the person
