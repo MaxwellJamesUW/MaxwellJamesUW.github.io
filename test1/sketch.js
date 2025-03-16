@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(852 * 2, 393 * 2); // Scale up the canvas size by 3x
+  createCanvas(852, 393); // Scale up the canvas size by 3x
 }
 
 function draw() {
