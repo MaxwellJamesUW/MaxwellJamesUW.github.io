@@ -18,16 +18,16 @@ function draw() {
 
   // Draw the "Rad!" text
   textFont(robotoBold);
-  textSize(16 * 3); // Scale font size by 3x
-  text("RAD!", width / 2, 118 * 3); // Scale position by 3x
+  textSize(16); // Scale font size by 3x
+  text("RAD!", width / 2, 118); // Scale position by 3x
 
   // Draw the "XXX, it's time to pass the yap" text
-  textSize(34 * 3); // Scale font size by 3x
-  text("Matt Lau,", width / 2, 157 * 3); // Scale position by 3x
-  text("it's time to Pass the Yap...", width / 2, 197 * 3); // Scale position by 3x
+  textSize(34); // Scale font size by 3x
+  text("Matt Lau,", width / 2, 157); // Scale position by 3x
+  text("it's time to Pass the Yap...", width / 2, 197); // Scale position by 3x
 
   // Draw the input text or timer
   textFont(robotoMedium);
-  textSize(16 * 3); // Scale font size by 3x
-  text("Push the button to continue - OR, timer?", width / 2, 260 * 3); // Scale position by 3x
+  textSize(16); // Scale font size by 3x
+  text("Push the button to continue - OR, timer?", width / 2, 260); // Scale position by 3x
 }
