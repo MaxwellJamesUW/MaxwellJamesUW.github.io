@@ -11,8 +11,8 @@ let spacing = 8; // Space between the two text segments
 //  IMPORTANT TRACKERS
 //each question is a list containing "option1", "option2"
 let allQs = [
-  ["Fight one horse-sized duck", "Fight 20 duck-sized horses"],
-  ["Talking pets", "Talking babies"]
+  ["work for Microsoft", "work for Google"],
+  ["10 hours of user testing", "10 hours of prototyping"]
 ];
 
 let activeQ = 1; //active Question toggles between 0 and 1
