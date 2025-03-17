@@ -53,29 +53,16 @@ function preload() {
   
   // load all people here
   let p = {
-    "name": "Max1",
-    "photo" : loadImage('/assets/MSpaintMax.png')
+    "name": "Tess",
+    "photo" : loadImage('tess.jpg')
   };
   participants.push(p);
   
   p = {
-    "name": "Max2",
-    "photo" : loadImage('/assets/MSpaintMax.png')
+    "name": "Jey",
+    "photo" : loadImage('jey.png')
   };
   participants.push(p);
-  
-  p = {
-    "name": "Max3",
-    "photo" : loadImage('/assets/MSpaintMax.png')
-  };
-  participants.push(p);
-  
-  p = {
-    "name": "Max4",
-    "photo" : loadImage('/assets/MSpaintMax.png')
-  };
-  participants.push(p);
-  
   
   //we'll push all of our participants into the participants list
   //then randomize
@@ -83,8 +70,8 @@ function preload() {
   particpants = shuffleList(participants);
   
   pZero = {
-    "name": "Starting Max",
-    "photo" : loadImage('/assets/MSpaintMax.png')
+    "name": "Max",
+    "photo" : loadImage('max.jpg')
   };
   
 }
